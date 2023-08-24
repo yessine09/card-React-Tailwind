@@ -10,7 +10,7 @@
   {
     "name": "Mouse",
     "price": "30",
-    "img": "../src/assets/clavier.jpg",
+    "img": "./src/assets/mouse.jfif ",
     "like": 0,
     "quantity": 0,
     "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page"
@@ -18,7 +18,7 @@
   {
     "name": "KeyBoard",
     "price": "70",
-    "img": "../src/assets/mouse.jfif",
+    "img": "/src/assets/clavier.jpg",
     "like": 0,
     "quantity": 20,
     "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page"

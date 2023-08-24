@@ -3,20 +3,32 @@ import productsData from "./products.json";
 import Product from "./Product";
 
 const Products = () => {
-  const [count, setCount] = useState(0);
-  const [clicked, setClicked] = useState(false);
-  const handleLike = () => {
-    setCount(count + 1);
+  const [listProducts, setListProducts] = useState(productsData);
+
+  const handleLike = (index) => {
+    const arr = listProducts.map((p, i) => {
+      if (i === index) {
+        return { ...p, like: p.like + 1 };
+      } else {
+        return p;
+      }
+    });
+    setListProducts(arr);
   };
+
   return (
     <>
       <h1 className="text-4xl text-blue-500 ont-semibold mb-2">
         List of products
       </h1>
-      <div className="flex flex-wrap space-x-3 space-y-2 mr-1	ml-5 my-7">
-        {productsData.map((list, index) => (
-          <Product productList={list} key={index} likeFn={handleLike} />
-        ))}
+      <div>
+        {/* {listProducts.map((list, index) => ( */}
+        <Product
+          productListall={listProducts}
+          // key={index}
+          onHandleLike={handleLike}
+        />
+        {/* ))} */}
       </div>
     </>
   );
