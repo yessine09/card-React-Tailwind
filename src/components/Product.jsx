@@ -2,7 +2,7 @@ import { data } from "autoprefixer";
 import { list } from "postcss";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ProductsDetails from "./ProductsDetails";
+import ProductsDetails from "../screens/ProductsDetails";
 
 const Product = ({ productListall, onHandleLike }) => {
   //console.log("list", productList);
@@ -26,14 +26,11 @@ const Product = ({ productListall, onHandleLike }) => {
           key={index}
         >
           {/* //dark:bg-teal-600 */}
-          <a href="#">
-            <img
-              className="rounded-t-lg "
-              src={productList.img}
-              width="100%"
-              height="auto"
-            />
-          </a>
+          <div className="bg-sky-300">
+            <a href="#">
+              <img className="object-fill h-48 w-96" src={productList.img} />
+            </a>
+          </div>
           <div className="p-3">
             <a href="#">
               <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -117,9 +114,8 @@ const Product = ({ productListall, onHandleLike }) => {
               }}
               className="ml-6 mt-5 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              {" "}
               Detail
-              {console.log("dataaaa1", data)}
+              {console.log("dataaaa1", dataP)}
               {/* {console.log("data", data)} Details */}
               <svg
                 className="w-3.5 h-3.5 ml-2"

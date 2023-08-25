@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import productsData from "./products.json";
 import Product from "./Product";
+import { getAllProducts } from "../service/Api";
 
 const Products = () => {
-  const [listProducts, setListProducts] = useState(productsData);
+  //const [listProducts, setListProducts] = useState(productsData);
+  const [listProducts, setListProducts] = useState([]);
+
+  useEffect(() => {
+    getAllProducts().then((Products) => setListProducts(Products));
+  }, []);
 
   const handleLike = (index) => {
     const arr = listProducts.map((p, i) => {
@@ -18,7 +24,7 @@ const Products = () => {
 
   return (
     <>
-      <h1 className="text-4xl text-blue-500 ont-semibold mb-2">
+      <h1 className="text-4xl font-bold text-center text-blue-600 mt-8 font-mono">
         List of products
       </h1>
       <div>

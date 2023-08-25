@@ -1,0 +1,51 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Chair",
+      "price": "1400",
+      "img": "../src/assets/chaise.jfif",
+      "like": 0,
+      "quantity": 10,
+      "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page"
+    },
+
+    {
+      "id": 2,
+      "name": "KeyBoard",
+      "price": "70",
+      "img": "/src/assets/clavier.jpg",
+      "like": 0,
+      "quantity": 20,
+      "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page"
+    },
+
+    {
+      "id": 3,
+      "name": "Headset",
+      "price": "70",
+      "img": "../src/assets/casque.jfif",
+      "like": 0,
+      "quantity": 20,
+      "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page"
+    },
+    {
+      "id": 4,
+      "name": "Mouse",
+      "price": "30",
+      "img": "/src/assets/mouse1.jfif ",
+      "like": 0,
+      "quantity": 0,
+      "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page"
+    },
+    {
+      "id": 5,
+      "name": "Carpet",
+      "price": "70",
+      "img": "../src/assets/tapis.jfif",
+      "like": 0,
+      "quantity": 20,
+      "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page"
+    }
+  ]
+}

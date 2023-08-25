@@ -32,9 +32,11 @@ export function StickyNavbar() {
         </a> */}
 
         <NavLink
-          className="flex items-center"
+          className="flex items-center text-white text-2xl font-bold "
           to="/"
-          style={({ isActive }) => ({ color: isActive ? "gray" : "black" })}
+          style={({ isActive }) => ({
+            color: isActive ? "#44403c" : "#f5f5f4",
+          })}
         >
           home
         </NavLink>
@@ -47,9 +49,11 @@ export function StickyNavbar() {
         className="p-1 font-normal"
       >
         <NavLink
-          className="flex items-center"
-          to="description/about"
-          style={({ isActive }) => ({ color: isActive ? "gray" : "black" })}
+          className="flex items-center  text-white text-2xl font-bold "
+          to="/myAbout"
+          style={({ isActive }) => ({
+            color: isActive ? "#44403c" : "#f5f5f4",
+          })}
         >
           about
         </NavLink>
@@ -62,9 +66,11 @@ export function StickyNavbar() {
         className="p-1 font-normal"
       >
         <NavLink
-          className="flex items-center"
-          to="/products"
-          style={({ isActive }) => ({ color: isActive ? "gray" : "black" })}
+          className="flex items-center text-white text-2xl font-bold"
+          to="/myproducts"
+          style={({ isActive }) => ({
+            color: isActive ? "#44403c" : "#f5f5f4",
+          })}
         >
           Products
         </NavLink>
@@ -79,7 +85,7 @@ export function StickyNavbar() {
           <Typography
             as="a"
             href="#"
-            className="mr-4 cursor-pointer py-1.5 font-medium "
+            className="mr-4 cursor-pointer py-1.5  text-3xl font-bold mt-3 "
           >
             MyStore
           </Typography>
@@ -132,33 +138,6 @@ export function StickyNavbar() {
           </Button>
         </MobileNav>
       </Navbar>
-      <div className="mx-auto max-w-screen-md py-12">
-        <Card className="mb-12 overflow-hidden">
-          <img
-            alt="nature"
-            className="h-[32rem] w-full object-cover object-center"
-            src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2717&q=80"
-          />
-        </Card>
-        <Typography variant="h2" color="blue-gray" className="mb-2">
-          What is our object
-        </Typography>
-        <Typography color="gray" className="font-normal">
-          Can you help me out? you will get a lot of free exposure doing this
-          can my website be in english?. There is too much white space do less
-          with more, so that will be a conversation piece can you rework to make
-          the pizza look more delicious other agencies charge much lesser can
-          you make the blue bluer?. I think we need to start from scratch can my
-          website be in english?, yet make it sexy i&apos;ll pay you in a week
-          we don&apos;t need to pay upfront i hope you understand can you make
-          it stand out more?. Make the font bigger can you help me out? you will
-          get a lot of free exposure doing this that&apos;s going to be a chunk
-          of change other agencies charge much lesser. Are you busy this
-          weekend? I have a new project with a tight deadline that&apos;s going
-          to be a chunk of change. There are more projects lined up charge extra
-          the next time.
-        </Typography>
-      </div>
     </div>
   );
 }
