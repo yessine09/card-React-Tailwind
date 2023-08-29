@@ -3,8 +3,9 @@ import { list } from "postcss";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ProductsDetails from "../screens/ProductsDetails";
+import { ListItem } from "@material-tailwind/react";
 
-const Product = ({ productListall, onHandleLike }) => {
+const Product = ({ productListall, onHandleLike, onDeleteItem }) => {
   //console.log("list", productList);
   const navigate = useNavigate();
 
@@ -54,9 +55,9 @@ const Product = ({ productListall, onHandleLike }) => {
             <div className="flex flex-wrap">
               <button
                 onClick={() => {
-                  onHandleLike(index);
+                  onHandleLike(productList.id);
                   {
-                    console.log("product1 : ", index);
+                    console.log("product1 : ", productList.id);
                   }
                 }}
                 className=" px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
@@ -91,7 +92,6 @@ const Product = ({ productListall, onHandleLike }) => {
               </div>
             </div>
 
-            {/* {console.log("name", productList.price)} */}
             {/* {
               (dataP = [
                 productList.name,
@@ -99,16 +99,17 @@ const Product = ({ productListall, onHandleLike }) => {
                 productList.description,
               ])
             } */}
-            {console.log("productLIst", productList)}
-            <Link
-              // to={{
+            {/* to={{
               //   pathname: "/products/details",
               //   state: {
               //     name: productList.name,
               //     // Other properties if needed
               //   },
-              // }}
-              to="/products/details"
+              // }} */}
+
+            {console.log("productLIst", productList)}
+            <Link
+              to="/myproducts/details"
               state={{
                 dataP: productList,
               }}
@@ -133,6 +134,22 @@ const Product = ({ productListall, onHandleLike }) => {
                 />
               </svg>
             </Link>
+
+            <button
+              type="button"
+              className="text-gray-900 ml-2 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            >
+              <Link to={`/myproducts/update/${productList.id}`}>Update</Link>
+            </button>
+            <div className="">
+              <button
+                type="button"
+                className="text-white ml-16 bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                onClick={() => onDeleteItem(productList.id)}
+              >
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       ))}

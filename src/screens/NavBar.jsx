@@ -75,6 +75,23 @@ export function StickyNavbar() {
           Products
         </NavLink>
       </Typography>
+
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <NavLink
+          className="flex items-center text-white text-2xl font-bold"
+          to="/addProduct"
+          style={({ isActive }) => ({
+            color: isActive ? "#44403c" : "#f5f5f4",
+          })}
+        >
+          AddProduct
+        </NavLink>
+      </Typography>
     </ul>
   );
 

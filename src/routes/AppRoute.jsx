@@ -26,27 +26,38 @@ const LazyLoadedHome = React.lazy(() => import("../components/test/Home"));
 const LazyLoadedProduct = React.lazy(() =>
   import("../screens/ProductsDetails")
 );
-const AppRoute = () => {
-  // const About = React.lazy(() => import("/About"));
 
+const LazyLoadedAddProduct = React.lazy(() =>
+  import("/src/screens/AddProduct")
+);
+
+const LazyLoadedUpdateProduct = React.lazy(() =>
+  import("../screens/UpdateProduct")
+);
+
+const AppRoute = () => {
   return (
     <>
-      {/* <Suspense fallback={<p>Loading.....</p>}>
-        <Routes>
-          <Route path="/home" element={<LazyHome />} />
-        </Routes>
-      </Suspense> */}
-
       <Routes>
         {/* <Route path="/" element={<Menu />} /> */}
         <Route path="/" element={<HomeScreen />} />
-
         {/* <Route path="/products" element={<ProductsLayout />}> */}
-
         {/* ---------------------------------------------------------------- */}
+        {/* //hedhy route test bch thzek lel product parent :D */}
+        <Route path="/products" element={<Products />} />
 
-        {/* // using lazyLoading */}
-
+        {/* -------------------------------------------------------- */}
+        <Route path="/myproducts" element={<ProductsScreen />} />
+        <Route path="/myAbout" element={<AboutScreen />} />
+        <Route
+          path="/addProduct"
+          element={
+            <Suspense fallback={<p>Loading :D</p>}>
+              <LazyLoadedAddProduct />
+            </Suspense>
+          }
+        />
+        {/* // using lazyLoading test home */}
         <Route
           path="/home"
           element={
@@ -60,15 +71,8 @@ const AppRoute = () => {
 
           <Route path="/home/:name" element={<UnderHome />} />
         </Route>
-
-        <Route path="/products" element={<Products />} />
-        <Route path="/myproducts" element={<ProductsScreen />} />
-        <Route path="/myAbout" element={<AboutScreen />} />
-
-        {/* // route imbrique avec lazyloading */}
-
-        {/* // Route imbrique : mghir element lzem  */}
-        <Route path="/products">
+        {/* // Route imbrique- products/details+ lazyloading/ nb:route imbrique mghir  mghir element lezem  */}
+        <Route path="/myproducts">
           <Route
             path="details"
             element={
@@ -77,11 +81,21 @@ const AppRoute = () => {
               </Suspense>
             }
           />
-        </Route>
 
+          <Route
+            path="update/:id"
+            element={
+              <Suspense fallback={<p>Loading.....</p>}>
+                <LazyLoadedUpdateProduct />
+              </Suspense>
+            }
+          />
+        </Route>
+        {/* //Test how to use Outlet-Route imbrique -template-partage  */}
         <Route path="/description" element={<DescriptionLayout />}>
-          {/* index for take the same path as the parent description layout */}
+          {/* index for take the same path as the parent "/description" */}
           <Route index exact={true} element={<Description />} />
+
           <Route path=":id" element={<DescriptionById />} />
           <Route path="add" element={<NewDescription />} />
           <Route path="contact" element={<Contact />} />
@@ -89,17 +103,10 @@ const AppRoute = () => {
             <Route path="childabout" element={<ChildAbout />} />
           </Route>
         </Route>
-
-        {/* <Route path="/about" element={<AboutScreen />} /> */}
-
         {/* // route paramtere */}
         <Route path="products/:id" element={<ProductDetailAxios />} />
-
         {/* // route parametre de recherche :useSearch : parametre de recherche-> ? TestSearch */}
         <Route path="/test" element={<TestSearch />} />
-
-        {/* Route imbrique -template partage */}
-
         {/* //using notfound */}
         <Route path="*" element={<NotFound />} />
       </Routes>

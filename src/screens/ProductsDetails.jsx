@@ -14,11 +14,11 @@ const ProductsDetails = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-screen bg-blue-900 text-white">
-        <h1 className="text-6xl font-semibold mb-6 font-serif	">
+      <div className="flex flex-col items-center justify-center  bg-blue-900 text-white">
+        <h1 className="text-4xl font-semibold mb-6 font-serif	">
           Product details :{" "}
         </h1>
-        <div className=" max-w-sm rounded overflow-hidden shadow-lg">
+        <div className=" max-w-xs rounded overflow-hidden shadow-lg ">
           <div className="dark:bg-gray-800 w-full">
             <img
               className="rounded-t-lg "
@@ -50,10 +50,12 @@ const ProductsDetails = () => {
           {/* <h5>name : {name}</h5> */}
         </div>
 
-        <p className="text-lg font-sans">
-          This page utilizes state, which is then accessed using the useLocation
-          hook.
-        </p>
+        <div>
+          <p className="text-lg font-sans">
+            This page utilizes state, which is then accessed using the
+            useLocation hook.
+          </p>
+        </div>
       </div>
     </>
   );
